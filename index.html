@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Découvrez Chez Momo's, restaurant familial spécialisé dans la cuisine locale haïtienne. Plats authentiques, frais et savoureux. Livraison disponible.">
+        <meta name="keywords" content="restaurant, cuisine haïtienne, plats locaux, livraison, Delmas, Momo's">
+        <meta name="author" content="Chez Momo's">
+        <title>Chez Momo's - Cuisine Locale</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Chez Momo's</h1>
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#apropos">A propos</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li class="cart-nav">
+                        <a href="#" onclick="ouvrirPanier()">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span id="cart-count">0</span></a>
+                    </li>
+                    <li class="nav-socials">
+                         <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                         <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--corps-->
+        <main>
+            <section id="accueil" class="hero">
+                <div class="hero-text">
+                    <h2 class="hero-title">Bienvenue à chez Momo's</h2>
+                    <p class="hero-subtitle">Découvrez les saveurs authentiques de notre cuisine locale.</p>
+                    <div class="hero-btns">
+                        <a href="#menu" class="btn btn-primary">Voir le menu</a>
+                        <a href="#services" class="btn btn-secondary">Nos services</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-carousel">
+                        <div class="carousel-item" onclick="ajouterPlat('Lalo', ['Petite portion', 'Grande portion'], { 'Petite portion': 750, 'Grande portion': 1000 }, 'images/Lalo.png')">
+                             <img src="images/Lalo.png" alt="Lalo" loading="lazy">
+                        </div>
+                        <div class="carousel-item" onclick="ajouterPlat('Crêpe salées', ['Poulet fromage', 'Jambon fromage'], { 'Poulet fromage': 500, 'Jambon fromage': 600 }, 'images/Crêpe Salées.jpg')">
+                            <img src="images/Crêpe Salées.jpg" alt="Crêpes" loading="lazy">
+                        </div>
+                        <div class="carousel-item" onclick="ajouterPlat('Tonmtonm', ['Petite portion', 'Grande portion'], { 'Petite portion': 750, 'Grande portion': 1000 }, 'images/Tonmtonm.webp')">
+                            <img src="images/Tonmtonm.webp" alt="Tonmtonm" loading="lazy">
+                        </div>
+                        <div class="carousel-item" onclick="ajouterPlat('Paté', ['Simple'], { 'Simple': 250 }, 'images/Paté.jpg')">
+                            <img src="images/Paté.jpg" alt="Paté" loading="lazy">
+                        </div>
+                        <div class="carousel-item" onclick="ajouterPlat('Ragoût', ['Simple'], { 'Simple': 750 }, 'images/Ragoût.jpg')">
+                            <img src="images/Ragoût.jpg" alt="Ragoût" loading="lazy">
+                        </div>
+                    </div>
+                    <button class="carousel-arrow left" onclick="prevSlide()">&#10094;</button>
+                    <button class="carousel-arrow right" onclick="nextSlide()">&#10095;</button>
+                </div>
+            </div>
+        <div class="carousel-dots">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+        </section>
+
+        <section id="apropos" class="about">
+            <div class="container about-enhanced">
+                <h2 class="section-title">A propos de nous</h2>
+
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="about-description">Nous sommes un restaurant familial qui se spécialise dans la cuisine locale. Notre mission est de fournir des plats délicieux et authentiques à nos clients, tout en soutenant les producteurs locaux.</p>
+
+                        <div class="about-actions">
+                            <button class="btn btn-secondary" onclick="ouvrirContact()">Nous contacter</button>
+                            <button class="btn btn-secondary" onclick="ouvrirMap()">Voir l'emplacement</button>
+                        </div>
+                    </div>
+
+                <div class="apropos-features-column">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Produits Frais</h4>
+                            <p>Directement au supermarché à votre assiette.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Tradition</h4>
+                            <p>Le secret des épices haïtiennes.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Rapidité</h4>
+                            <p>Parce que votre faim n'attend pas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div id="map-container" style="display:none; position: relative; margin-top: 20px;">
+                <span class="close-map" onclick="ouvrirMap()" style="position: absolute; right: 10px; top: 10px; cursor: pointer; background: white; border-radius: 50%; padding: 5px 10px; z-index: 5; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">×</span>
+    
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3782.4003820798066!2d-72.29827657613961!3d18.555979568094283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sht!4v1777470080502!5m2!1sen!2sht" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        width="100%" 
+                        height="450" 
+                        style="border:0; border-radius: 15px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+            <section id="menu" class="menu">
+    <h2>Notre menu</h2>
+    <div class="menu-row">
+        <div class="card">
+            <img src="images/Lalo.png" alt="Lalo" loading="lazy">
+            <h3>Lalo</h3>
+            <div class="card-actions">
+                <button class="btn btn-primary" onclick="ajouterPlat('Lalo', ['Petite portion', 'Grande portion'], { 'Petite portion': 750, 'Grande portion': 1000 }, 'images/Lalo.png')">Commande</button>
+                <button class="btn btn-secondary" type="button" onclick="ajouterAuPanier('Lalo')">Ajouter au panier</button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="images/Crêpe Salées.jpg" alt="Crêpe Salées" loading="lazy">
+            <h3 class="font-bold">Crêpe salées</h3>
+            <div class="card-actions">
+                <button class="btn btn-primary" onclick="ajouterPlat('Crêpe salées', ['Poulet', 'Jambon', 'Viande moulue'], { 'Poulet': 500, 'Jambon': 600, 'Viande moulue': 600 }, 'images/Crêpe Salées.jpg')">Commande</button>
+                <button class="btn btn-secondary" type="button" onclick="ajouterAuPanier('Crêpe salées')">Ajouter au panier</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/Tonmtonm.webp" alt="Tonmtonm" loading="lazy">
+            <h3 class="font-bold">Nos plats de riz (Tonmtonm)</h3>
+            <div class="card-actions">
+                <button class="btn btn-primary" onclick="ajouterPlat('Tonmtonm', ['Simple', 'Boeuf', 'Porc'], { 'Simple': 750, 'Boeuf': 750, 'Porc': 750 }, 'images/Tonmtonm.webp')">Commande</button>
+                <button class="btn btn-secondary" type="button" onclick="ajouterAuPanier('Tonmtonm')">Ajouter au panier</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/Paté.jpg" alt="Paté" loading="lazy">
+            <h3 class="font-bold">Nos Pâtés maison</h3>
+            <div class="card-actions">
+                <button class="btn btn-primary" onclick="ajouterPlat('Pâtés', ['Poulet', 'Viande moulue', 'Hareng', 'Morue', 'Pâtés au four'], { 'Poulet': 250, 'Viande moulue': 300, 'Hareng': 250, 'Morue': 250, 'Pâtés au four': 300 }, 'images/Paté.jpg')">Commande</button>
+                <button class="btn btn-secondary" type="button" onclick="ajouterAuPanier('Paté')">Ajouter au panier</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/Ragoût.jpg" alt="Ragoût" loading="lazy">
+            <h3 class="font-bold">Nos Ragoût</h3>
+            <div class="card-actions">
+                <button class="btn btn-primary" onclick="ajouterPlat('Ragoût', ['Porc', 'Boeuf', 'Poulet', 'Dinde'], { 'Porc': 750, 'Boeuf': 1000, 'Poulet': 750, 'Dinde': 750 }, 'images/Ragoût.jpg')">Commande</button>
+                <button class="btn btn-secondary" type="button" onclick="ajouterAuPanier('Ragoût')">Ajouter au panier</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/Wings.jpg" alt="Wings" loading="lazy">
+            <h3 class="font-bold">Wings (Spécialité)</h3>
+            <div class="card-actions">
+                <button class="btn btn-primary" onclick="ajouterPlat('Wings', ['Sauce barbecue', 'Simple'], {'Sauce barbecue': 1000, 'Simple': 750}, 'images/Wings.jpg')">Commande</button>
+                <button class="btn btn-secondary" type="button" onclick="ajouterAuPanier('Wings')">ajouter au Panier</button>
+            </div>
+        </div>
+    </div>
+</section>
+   
+            <section id="services">
+    <h2 class="section-title">Nos Services</h2>
+    <div class="services-container">
+        
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-truck"></i>
+            </div>
+            <div class="service-info">
+                <h3>Livraison</h3>
+                <p>Recevez vos plats directement chez vous.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <div class="service-info">
+                <h3>Sur place</h3>
+                <p>Profitez d'une ambiance chaleureuse dans notre salle.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+            <div class="service-info">
+                <h3>À emporter</h3>
+                <p>Commandez et récupérez vos plats rapidement.</p>
+            </div>
+        </div>
+    </div>
+</section>
+        </main>
+
+        <!--Pied de page-->
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2026 Restaurant Momo's - Tous droits réservés</p>
+                <div class="payment-methods">
+                    <span>Paiements acceptés :</span>
+                    <span class="local-pay">MonCash | Natcash</span>
+                </div>
+            </div>
+        </footer>
+
+        <div id="modalCommande" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="fermerModale()">&times;</span>
+                <div id="step-form">
+                    <h2>Votre Commande</h2>
+                    <div class="order-layout">
+                         <div class="order-form-side">
+                            <form id="form-commande">
+                                <label>Plat choisi :</label>
+                                <input type="text" id="nomPlat" readonly class="input-compact">
+
+                                <div id="container-variante" style="display:none; margin-bottom: 20px;">
+                                    <label>Choisir une option :</label>
+                                    <select id="optionPlat" class="select-compact"></select>
+                                </div>
+        
+                                <label>Quantité :</label>
+                                <input type="number" id="quantite" value="1" min="1" class="input-compact">
+
+                                <button type="button" class="btn-next" onclick="passerAuReview()">Suivant</button>
+                            </form>
+                        </div>
+
+                        <div class="order-visual">
+                            <img id="modal-img" src="" alt="Aperçu du plat">
+                            <div id="affichage-prix-dynamique" class="price-badge"></div>
+                        </div>
+                    </div>
+                </div>
+
+        <div id="step-review" style="display:none;">
+            <h2>Vérifiez votre commande</h2>
+            <div id="review-details"></div>
+            <div class="btn-group">
+                <button class="btn-back" onclick="retourFormulaire()">Modifier</button>
+                <button class="btn-confirm" onclick="validerCommande()">Confirmer et Payer</button>
+            </div>
+        </div>
+
+        <div id="step-success" style="display:none;">
+            <div class="success-icon">✅</div>
+            <h2>Commande reçue !</h2>
+            <p>Merci pour votre confiance. Votre plat arrive bientôt.</p>
+            <button class="btn-next" onclick="fermerModale()" style="margin-top: 20px;">Fermer</button>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
