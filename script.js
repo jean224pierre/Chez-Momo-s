@@ -233,6 +233,31 @@ function ouvrirContact() {
     // Crétion du lien whatsapp
     const whatsappUrl = `https://wa.me/${tel}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
+
+    const carousel = document.querySelector('.hero-carousel');
+let scrollInterval;
+
+// Fonction qui fait avancer le carrousel
+function startAutoScroll() {
+    scrollInterval = setInterval(() => {
+        // Si on arrive à la fin, on revient au début
+        if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            // Sinon on avance d'une image (la largeur du conteneur)
+            carousel.scrollBy({ left: carousel.offsetWidth, behavior: 'smooth' });
+        }
+    }, 2000); // Change d'image toutes les 2 secondes
+}
+
+// Arrête le défilement
+function stopAutoScroll() {
+    clearInterval(scrollInterval);
+}
+
+// Événements : quand la souris entre ou sort de l'image
+carousel.addEventListener('mouseenter', startAutoScroll);
+carousel.addEventListener('mouseleave', stopAutoScroll);
 }
 
 function ouvrirMap() {
