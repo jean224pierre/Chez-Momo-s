@@ -12,18 +12,18 @@ const menuItems = {
         image: 'images/Lalo.png'
     },
     'Crêpe salées': {
-        options: ['Poulet fromage', 'Jambon fromage'],
-        prix: { 'Poulet fromage': 500, 'Jambon fromage': 600 },
+        options: ['Poulet', 'Jambon', 'Viande moulue'],
+        prix: { 'Poulet': 500, 'Jambon': 600, 'Viande moulue': 600 },
         image: 'images/Crêpe Salées.jpg'
     },
     'Tonmtonm': {
-        options: ['Petite portion', 'Grande portion'],
-        prix: { 'Petite portion': 750, 'Grande portion': 1000 },
+        options: ['Simple', 'Boeuf', 'Porc'],
+        prix: { 'Simple': 750, 'Boeuf': 750, 'Porc': 750 },
         image: 'images/Tonmtonm.webp'
     },
     'Paté': {
-        options: ['Simple'],
-        prix: { 'Simple': 250 },
+        options: ['Poulet', 'Viande moulue', 'Hareng', 'Morue', 'Au four'],
+        prix: { 'Poulet': 250, 'Viande moulue': 300, 'Hareng': 250, 'Morue': 250, 'Au four': 300 },
         image: 'images/Paté.jpg'
     },
     'Ragoût': {
